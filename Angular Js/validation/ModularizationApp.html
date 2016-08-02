@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="mianApp">
+<head>
+	<title>Angula JS Forms</title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="customerController">
+
+
+
+<form name="customerdetails" novalidate>
+	First Name: 
+	<input name="First Name" type="text"  ng-model="First Name"  required>
+	
+	<span style="color:red" ng-show="customerdetails.First Name.$dirty && customerdetails.First Name.$invalid">
+      <span ng-show="customerdetails.First Name.$error.required">First Name is Mandatory.</span>
+	  
+   </span>
+<br/>
+	
+	Last Name :
+	<input  type="text" ng-model="Last Name"  name="txtLast Name " required />
+	
+	<span style="color:red" ng-show="customerdetails.txtLast Name.$dirty && customerdetails.txtLast Name.$invalid">
+	
+	<span ng-show="customerdetials.txtLast Name.$error.required">Last Name is Required</span>
+	  	
+	</span>
+	
+<br/>	
+	Credit Card NO:
+		<input type="number" ng-model="card NO" name="card NO" required/>
+		<span style="color:red" ng-show="customerdetails.card NO.$dirty && customerdetails.card No.$invalid">
+	<span ng-show="customerdetails.card No.$error.required"> Enter Card Details</span>
+	  <span ng-show="customerdetails.card NO.$error.invalid"> Total NO of Digits Should Be 16</span>     
+	</span>
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Enter a Number :
+<input type="text" pattern="^[0-9]*$" name="mytxt" ng-model="myNumber" required/>
+	<span style="color:red;font-size:20px" ng-show="employeeForm.mytxt.$dirty && employeeForm.mytxt.$invalid">
+<span ng-show="employeeForm.mytxt.$error.required"> Secret number is mandatory</span>
+	  <span ng-show="employeeForm.mytxt.$error.pattern">You do not meet the pattern</span>
+    	</span> -->
+
+
+
+
+
+
+	<button ng-disabled="customerdetails.First Name.$dirty && customerdetails.First Name.$invalid ||
+           customerdetails.txtLast Name.$dirty && customerdetails.txtLast Name.$invalid ||
+           customerdetails.card NO.$dirty && customerdetails.card NO.$invalid" ||
+           ng-click="submit()">Submit</button></td></tr>
+	<input type="reset" ng-click="reset()"/>
+	
+</form>
+</div>
+
+
+<script>
+
+
+
+
+// var mainApp = angular.module("mainApp",[]);
+
+// mainApp.controller('customerController', function($scope) {
+//   //  $scope.reset = function(){
+
+// 		// $scope.First Name = "Nishanth";
+// 		// $scope.Last Name = "Nareddy";
+// 		// $scope.card NO = "1234567898765432";		
+		  
+//   //  }   
+//   //  $scope.reset();
+// });
+</script>
+</body>
+</html>

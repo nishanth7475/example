@@ -1,0 +1,13 @@
+1.Prototype:
+Ans:Every JavaScript has a prototype.Protptype is also an object.All JavaScript objects are inherited their methods and properties from  a prototype.JavaScript prototypes are object.prototype and Date.prototype.All JavaScript objects(Date,Array,RedExp…) inherit  from their object.prototype
+Eg:creating a prototype
+Standard way to write a object.prototype is to use an object construction function:
+function Person(first,last,age,eye-color){
+this.firstName=first;
+this.lastName=last;
+this.age=age;
+this.eyecolor=eyecolor;
+}
+var my Father=new person(“Bal reddy”,”Nareddy”,48,”black”);
+var my Mother=new person(“Sujatha”,”Nareddy”,45,”black”);
+

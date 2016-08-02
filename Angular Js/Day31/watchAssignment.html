@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script>
+	var myApp=angular.module('myApp',[]);
+	myApp.controller('mycontroller',function($scope){
+		$scope.prodcut={pid:101,prodcutName:'T-shirt',prodcutprice:200,
+		Availablity:50,OrderQty:0
+	};
+	$scope.paymentAmount=0;
+	$scope.$watch('prodcut.OrderQty',function (newValue,oldValue){
+		$scope.prodcut.Availablity=$scope.prodcut.Availablity-newValue;
+		$scope.paymentAmount=newValue*$scope.prodcut.prodcutprice;
+
+	});
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="mycontroller">
+PID<input type="text" ng-model="prodcut.pid"/>
+Name<input type="text" ng-model="prodcut.pid"/>
+Price<input type="number" ng-model="prodcut.prodcutprice"/>
+Availablity<input type="number" ng-model="prodcut.Availablity"/>
+Order Qty<input type="number" ng-model="prodcut.OrderQty"/>
+</br>
+<h1>{{paymentAmount}}</h1>
+
+</body>
+</html>

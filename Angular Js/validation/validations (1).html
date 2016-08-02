@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Angular JS Forms</title>
+<script src="angular.min.js"></script>
+
+</head>
+<body>
+<h2>Employee Management Application</h2>
+
+<div ng-app="mainApp" ng-controller="employeeController">
+
+
+
+<form name="employeeForm" novalidate>
+	Employee Number: 
+	<input name="empNo" type="number" min=200 max=500 ng-model="empNo" length="100" required>
+	
+	<span style="color:red" ng-show="employeeForm.empNo.$dirty && employeeForm.empNo.$invalid">
+      <span ng-show="employeeForm.empNo.$error.required">Employee Number is Mandatory.</span>
+	  <span ng-show="employeeForm.empNo.$error.number">Please Enter Only Numbers here</span>
+     <span ng-show="employeeForm.empNo.$error.min">Please enter miimum number more then 200</span>
+     <span ng-show="employeeForm.empNo.$error.max">Please Enter maximum  less then 500</span>
+   </span>
+<br/>
+	
+	Employee Age :
+	<input  type="number" ng-model="Age" min="18" max="60" name="txtAge" required />
+	
+	<span style="color:red;font-size:20px" ng-show="employeeForm.txtAge.$dirty && employeeForm.txtAge.$invalid">
+	
+	<span ng-show="employeeForm.txtAge.$error.required">Age Cannot be left blank</span>
+	  <span ng-show="employeeForm.txtAge.$error.number">Age are always numberic only</span>
+     <span ng-show="employeeForm.txtAge.$error.min">You Do not Qualify</span>
+     <span ng-show="employeeForm.txtAge.$error.max">You Are over qualified</span>	
+	</span>
+	
+<br/>	
+	Email Address :
+		<input type="email" ng-model="email" name="txtEmail" required/>
+		<span style="color:red;font-size:20px" ng-show="employeeForm.txtEmail.$dirty && employeeForm.txtEmail.$invalid">
+	<span ng-show="employeeForm.txtEmail.$error.required"> Email is mandatory</span>
+	  <span ng-show="employeeForm.txtEmail.$error.invalid"> Invalid Email Address </span>     
+	</span>
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enter a Number :
+<input type="text" pattern="^[0-9]*$" name="mytxt" ng-model="myNumber" required/>
+	<span style="color:red;font-size:20px" ng-show="employeeForm.mytxt.$dirty && employeeForm.mytxt.$invalid">
+<span ng-show="employeeForm.mytxt.$error.required"> Secret number is mandatory</span>
+	  <span ng-show="employeeForm.mytxt.$error.pattern">You do not meet the pattern</span>
+    	</span>
+
+
+
+
+
+
+	<button ng-disabled="employeeForm.txtAge.$dirty && employeeForm.txtAge.$invalid ||
+           employeeForm.empNo.$dirty && employeeForm.empNo.$invalid ||
+           employeeForm.txtEmail.$dirty && employeeForm.txtEmail.$invalid" ||
+           ng-click="submit()">Submit</button></td></tr>
+	<input type="reset" ng-click="reset()"/>
+	
+</form>
+</div>
+
+
+<script>
+
+
+
+
+var mainApp = angular.module("mainApp", []);
+
+mainApp.controller('employeeController', function($scope) {
+   $scope.reset = function(){
+   $scope.myNumber=30;
+		$scope.empNo = "101";
+		$scope.firstName = "";
+		$scope.lastName = "";
+		$scope.email = "someone";		
+		$scope.Age = 25;
+		$scope.usaNumber = 1;     
+   }   
+   $scope.reset();
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+

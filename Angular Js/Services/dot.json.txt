@@ -1,0 +1,11 @@
+[   {"stockId" :"$101","stockName":"HCL","Industry":"Oil","Type":"Equity"},
+{"stockId" :"$102","stockName":"Infosys","Industry":"IT","Type":"Equity"},
+
+{"stockId" :"$103","stockName":"Nestle","Industry":"FMCG","Type":"Equity"},
+
+{"stockId" :"$104","stockName":"WIPRO","Industry":"IT","Type":"Equity"},
+
+{"stockId" :"$105","stockName":"HCL","Industry":"Oil","Type":"Equity"}
+]
+
+

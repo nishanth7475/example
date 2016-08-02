@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<style>
+	a.one:link {color: #000000; text-decoration: none}
+	a.one:visited {color: #000000; text-decoration: none}
+	a.one:hover {text-decoration: underline;font-size: 150%}
+
+	body{font-family:arial;}
+	table.sty{font-size:80%;background:black}
+	a{color:black;text-decoration:none;font:normal}
+	a:hover{color:#606060}
+	td.menu{background:lightblue}
+	table.menu
+	{
+		font-size:100%;
+		position:absolute;
+		visibility:hidden;
+		background:black;
+	}
+</style>
+
+<script language="JavaScript" type="text/javascript" src="cookies.js"></script>
+<script language="JavaScript" type="text/javascript" >
+function readData() 
+{
+    var data = getCookie("userName");
+    usr.innerHTML="Welcome " + data; 
+}
+</script>
+
+<script type="text/javascript">
+	function goTo()
+	{
+		location.href="WelcomePage.html";
+	}
+
+	function runClock()
+	{
+		dt =new Date();
+		var dy =new Array("Sun","Mon","Tues","Wednes","Thurs","Fri","Satur");
+		var mn=new Array("Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec");
+		mm=dt.getMonth();
+		yy=dt.getYear();
+		dd=dt.getDate();
+		d=dt.getDay();
+				
+		dispCal = dy[d]+ "day, "+ mn[mm] + " " + dd + ", " + yy + " " + dt.getHours() + " : " + dt.getMinutes() + " : " + dt.getSeconds() ; 
+		dc.innerHTML=dispCal ;
+		setTimeout("runClock();",1000);
+	}
+	delay=850 ;
+	imageNum = 1 ;
+	fish_series = new Array();
+	for(i=1; i < 9 ; i++)
+	{
+		fish_series[i] = new Image();
+		fish_series[i].src = i + ".jpg";
+	}
+	function dance()
+	{
+		document.fish_dance.src = fish_series[imageNum].src;
+		imageNum++;
+		if (imageNum > 8 )
+		{
+			imageNum = 1 ;
+		}
+	}
+
+
+function showmenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="visible"
+}
+function hidemenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="hidden"
+}
+</script>
+</HEAD>
+<BODY onLoad="runClock();readData()">
+<font size=2>
+<SPAN id="dc" style="position:absolute;top:48;left:780;font:normal"></SPAN></FONT>
+<font size=4>
+<SPAN id="usr" style="position:absolute;top:100;left:800;font:normal"></SPAN></FONT>
+<IMG src="Runner-02-june.gif"><FONT size="4" face="Arial Black">SET Web Application</FONT>
+<table width="100%" class="sty">
+ <tr bgcolor="green">
+  <td onmouseover="showmenu('tutorials')" onmouseout="hidemenu('tutorials')">
+   <a href="/default.asp"><FONT COLOR=WHITE> Home</FONT></a><br />
+   <table class="menu" id="tutorials" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Home</a></td></tr>
+   <tr><td class="menu"><a href="/xhtml/default.asp">XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/css/default.asp">CSS</a></td></tr>
+   <tr><td class="menu"><a href="/xml/default.asp">XML</a></td></tr>
+   <tr><td class="menu"><a href="/xsl/default.asp">XSL</a></td></tr>
+   </table>
+  </td>
+  <td onmouseover="showmenu('scripting')" onmouseout="hidemenu('scripting')">
+   <a href="Menubar3.asp"><FONT COLOR=WHITE>SET Details</FONT></a><br />
+   <table class="menu" id="scripting" width="120">
+   <tr><td class="menu"><a href="addSETDetails.asp">ADD Individual Details</a></td></tr>
+   <tr><td class="menu"><B><font color=gray>Add Behavioural strengths</font></b></td></tr>
+   <tr><td class="menu"><a href="AchievementHobbieInterest2.asp">Add Achievements</a></td></tr>
+   <tr><td class="menu"><a href="CareerAnchorsDataFeed.asp">Add SET's Anchor points</a></td></tr>
+   <tr><td class="menu"><a href="/ado/default.asp">ADO</a></td></tr>
+   </table>
+  </td>
+  <td>
+   <a href="changePassword.asp"><FONT COLOR=WHITE>Change Password</FONT></a><br />
+  </td>
+  <td onmouseover="showmenu('logout')" onmouseout="hidemenu('logout')">
+   <a href="HomePage.asp"><FONT COLOR=WHITE>Logout</FONT></a><br />
+   <table class="menu" id="logout" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Logoff</a></td></tr>
+   <!--tr><td class="menu"><a href="/site/site_validate.asp">Validate XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate CSS</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate XML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate WML</a></td></tr-->
+   </table>
+  </td>
+ </tr>
+</table>
+<br><br><br>
+<TABLE border=1>
+	<TR>
+		<TD>Get Modulewise test reports</TD>
+	</TR>
+	<TR>
+		<TD>Get Online Assessment</TD>
+	</TR>
+	<TR>
+		<TD>Submit Online Feedback</TD>
+	</TR>
+<IMG src="D2605ST1.jpg">
+</TABLE>
+</BODY>
+</HTML>

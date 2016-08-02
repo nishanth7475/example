@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="stockApp">
+<head>
+	<title>Angula JS $http service</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript">
+	var stocks=angular.module('stockApp',[]);
+	stocks.controller('stockcontroller',function($scope,$http){
+		$http.get('http://www.w3schools.com/angular/customers.php').success(function(responseData){
+			$scope.result=responseData.records;
+			$scope.test="something";
+		});
+$scope.myData=function(){
+	alert('welcome to NG-click');
+}
+
+});
+	
+	</script>
+</head>
+<body>
+<div ng-controller="stockcontroller">
+<table border="1">
+<h1>{{test}}</h1>
+<tr ng-repeat="o in result">
+<td>{{o.Name}}</td>
+<td>{{o.Country}}</td>
+<td>{{o.City}}</td>
+
+	
+</tr>
+	
+</table>
+	
+</div>
+
+</body>
+</html>

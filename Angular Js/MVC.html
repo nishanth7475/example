@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myfirstModule">
+<head>
+	<title></title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="myfirstcontroller">
+	<h1>Hello,{{firstName}} {{lastName}}</h1>
+</div>
+<div ng-controller="mysecondcontroller">
+	<h1>Hello,{{projectName}} {{projectowner}}</h1>
+</div>
+<div ng-controller="myfirstNGobjectArray">
+<ul>
+<li ng-repeat="s in stockInformation">
+	<h1>Hello</h1>
+<p>{{s.stockID}}</p>
+{{s.stockName}}
+{{s.stockPrice}}
+
+</li>
+</ul>
+</div>
+
+
+</body>
+<script type="text/javascript">
+var myNGApp=angular.module("myfirstModule",[]);
+ myNGApp.controller("myfirstcontroller",function($scope){
+ $scope.firstName="Anusha",
+	$scope.lastName="Aerva",
+	$scope.designation="Api Developer",
+	$scope.city="Seattle"
+});
+myNGApp.controller("mysecondcontroller",function($scope){
+ 	$scope.projectName="online",
+ 	$scope.projectowner="Aerva"
+
+ });
+myNGApp.controller('myfirstNGobjectArray',function($scope) {
+$scope.stockInformation = [
+{stockId :101,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :102,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :103,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :104,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :105,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :106,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :107,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId :108,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840}]
+
+});
+	
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myfirstModule">
+<head>
+	<title></title>
+	<script src="angular.min.js"></script>
+	<script type="text/javascript" src="jquery-2.1.4.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+<div ng-controller="myfirstcontroller">
+	<h1>Hello,{{firstName}}, {{lastName}}, {{designation}}, {{city}}</h1>
+</div>
+<div ng-controller="mysecondcontroller">
+	<h1>Hello,{{projectName}} {{projectowner}}</h1>
+</div>
+<div ng-controller="myfirstNGobjectArray">
+<ul>
+<li ng-repeat="s in stockInformation">
+	<h1>Hello</h1>
+<p>{{s.stockID}}
+{{s.stockName}},
+{{s.stockPrice}}.
+</p>
+
+</li>
+</ul>
+</div>
+
+
+</body>
+<script type="text/javascript">
+var myNGApp=angular.module("myfirstModule",[]);
+ myNGApp.controller("myfirstcontroller",function($scope){
+ $scope.firstName="nishanth",
+	$scope.lastName="nareddy",
+	$scope.designation="Api Developer",
+	$scope.city="Seattle"
+});
+myNGApp.controller("mysecondcontroller",function($scope){
+ 	$scope.projectName="online",
+ 	$scope.projectowner="Aerva"
+
+ });
+myNGApp.controller('myfirstNGobjectArray',function($scope) {
+$scope.stockInformation = [
+{stockId : 101,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 102,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 103,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 104,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 105,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 106,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 107,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840},
+{stockId : 108,stockName : 'HCL Tech',stockIndustry : 'IT',stockPrice : 840}]
+
+});
+	
+</script>
+</html>

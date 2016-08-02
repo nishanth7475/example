@@ -1,0 +1,129 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Images</title>
+<style type="text/css">
+header { text-align: center;
+background-color: black;
+margin-bottom: 10px;
+color: white;
+}
+#demo { float: left;
+margin-left: 60px;
+margin-top: 50px
+}
+img { margin-left: 30px;
+margin-top: 50px;
+}
+iframe {
+height: 600px;
+width: 450px;
+margin-left: 10px;
+}
+#maya {
+text-align: center;
+}
+</style>
+<script type="text/javascript">
+// var addcart=["1.jpg","2.jpg"];
+// console.log(addcart);
+// console.log(addcart[0]);
+// function myfunction(message){
+// 	console.log(message)
+
+// }
+// myfunction("your order is ok");
+
+// // Retrieve
+// console.log("Lastname retrieved from local Storage: ", localStorage.getItem("lastname"));
+$("#demo").click(function(message){
+	console.log("your order is ok")
+
+})
+</script>
+</head>
+<body>
+<header>
+<h1>Digital Images</h1>
+</header>
+
+<img align="left" src="images/1.jpg" width="350px" height="300px">
+
+<img src="images/2.jpg"align="next" width="350px" height="300px">
+<img src="images/3.jpg" width="350px" height="300px" align="next">
+<form>
+<span id="demo" style="align:down;padding:3%">
+
+Quality of Images: <select name="select">
+<option value="select">select</option>
+<option value="380p">380p</option>
+<option value="420p">480p</option>
+<option value="720p HD">720 HD</option>
+<option value="1080p HD">1080 HD</option>
+<option value="4K">4K</option>
+</select> <br>
+Types of Items:</br>
+<input type="radio" name="" value="coffe mug">coffe mug</br>
+<input type="radio" name="" value="T-shirt">T-shirt</br>
+<input type="radio" name="" value="poster">poster</br>
+Glossy finish:</br>
+<input type="checkbox" name="" value="">Yes</br>
+<input type="checkbox" name=""  value="">No</br>
+Quanitity:
+<input type="text"></br>
+
+<p> <del>list price : $10 </del><br> price : $8</p></br>
+<a href="checkout.html"><button id="btnmaya">add to cart</button></a>
+</span>
+</form>
+<form>
+<span id="demo" style="align:left;padding:3%">
+Quality of Images: <select name="select">
+<option value="select">select</option>
+<option value="380p">380p</option>
+<option value="420p">480p</option>
+<option value="720p HD">720 HD</option>
+<option value="1080p HD">1080 HD</option>
+<option value="4K">4K</option>
+</select> <br>
+Types of Items:</br>
+<input type="radio" name="1" value="coffe mug">coffe mug</br>
+<input type="radio" name="2" value="T-shirt">T-shirt</br>
+<input type="radio" name="3" value="poster">poster</br>
+Glossy finish:</br>
+<input type="checkbox" name="" value="">Yes</br>
+<input type="checkbox" nam="" value="">No</br>
+Quanitity:
+<input type="text"></br>
+<p> <del>list price : $10 </del><br> price : $7</p></br>
+<a href="grenshirtcheckout.html"><button id="btnmaya">add to cart</button></a>
+</span>
+</form>
+<form>
+<span id="demo" style="align:left; padding:3%" >
+Quality of Images: <select name="select">
+<option value="select">select</option>
+<option value="380p">380p</option>
+<option value="420p">480p</option>
+<option value="720p HD">720 HD</option>
+<option value="1080p HD">1080 HD</option>
+<option value="4K">4K</option>
+</select> <br>
+Types of Items:</br>
+<input type="radio" name="1" value="coffe mug">coffe mug</br>
+<input type="radio" name="2" value="T-shirt">T-shirt</br>
+<input type="radio" name="3" value="poster">poster</br>
+Glossy finish:</br>
+<input type="checkbox" name="" value="">Yes</br>
+<input type="checkbox" nam="" value="">No</br>
+Quanitity:
+<input type="text"></br>
+<p> <del>list price : $10 </del><br> price : $9</p></br>
+<a href="grenshirtcheckout.html"><button id="btnmaya">add to cart</button></a>
+</span>
+</form>
+
+
+
+</body>
+</html>

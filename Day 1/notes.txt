@@ -1,0 +1,47 @@
+1. HTML - Hypertext markup languauge
+
+	1. pre-defined tags <> content </>
+	2. along with the tags we have attributes
+-----------------------------------------------------------------------------
+	has a structure
+
+<html>
+
+
+</html>
+-------------------------------------------
+1. Header Tags - used to display the heading of content
+	h1 to h6
+2. p - this are used to display wide contents
+3. formatting tags	b - bold, i - italic and u- underline 
+4. empty tag - br - break line
+5. link tags, which will help to you to link the content of the page
+	May be from one page to another page or 
+	from part of the page to another
+	they are also termed as anchor tags
+6. Table tags
+	<table>
+		<tr> 
+			<th> </th> - table heading
+			<td> </td> - table data
+		</tr> --table row
+	</table>
+	colspan
+	rowspan
+---------------------------------------------------------------------------------
+	go ahead and create a small page, about us and contact us
+	which will cover the above tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+

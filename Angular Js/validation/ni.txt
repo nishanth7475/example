@@ -1,0 +1,17 @@
+Create a new in the modularization App
+Following are the inputs we need to take from the user
+
+FirstName and LastName (both are required)
+Credit card no : total num of digits should be 16
+Take a Radio Button : Have a Discount Coupoun (Yes/No) user has to check onne of the value, else display the msg
+Country : Select country (show any 5 countries when user clicks on the drop down), if the cointry is not selected show the message 
+ accordingly
+
+
+Notify Me : (Check Boxes)
+ Email
+ SMS
+ Social Media
+ VoiceMail
+ None
+

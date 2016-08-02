@@ -1,0 +1,377 @@
+<HTML>
+<HEAD>
+<style>
+	a.one:link {color: #000000; text-decoration: none}
+	a.one:visited {color: #000000; text-decoration: none}
+	a.one:hover {text-decoration: underline;font-size: 150%}
+
+	body{font-family:arial;}
+	table.sty{font-size:80%;background:black}
+	a{color:black;text-decoration:none;font:normal}
+	a:hover{color:#606060}
+	td.menu{background:lightblue}
+	table.menu
+	{
+		font-size:100%;
+		position:absolute;
+		visibility:hidden;
+		background:black;
+	}
+</style>
+<script type="text/javascript">
+
+function loginfocus()
+{
+register.lname.focus()
+}
+
+function validate()
+{
+flag=true
+
+
+if (register.lname.value=="")
+{
+alert("pls enter your name")
+flag=false
+register.lname.focus()
+
+}
+		else if(!(isNaN(register.lname.value)))
+		{
+		alert("only words allowed")
+		flag=false
+		register.lname.focus()
+		
+		}
+
+else if(register.dbd.selectedIndex==0||register.dmd.selectedIndex==0||register.dyd.selectedIndex==0)
+{
+alert("select date of birth in dd/mm/yyyy");
+flag=false
+}
+
+else if((register.gender[0].checked==0)&&(register.gender[1].checked==0))
+{
+alert("select genger field");
+flag=false;
+}
+
+else if(register.address.value=="")
+{
+alert("Enter your address")
+flag=false;
+register.address.focus();
+}
+
+else if(register.phone.value=="")
+{
+alert("Enter your phone no")
+flag=false;
+register.phone.focus();
+}
+			else if(isNaN(register.phone.value))
+			{
+			alert("only number allowed")
+			flag=false;
+			register.phone.focus();
+			}
+
+else if(register.psno.value=="")
+{
+alert("Enter your PsNo")
+flag=false;
+register.psno.focus();
+}
+			else if(isNaN(register.psno.value))
+		    {
+				alert("Only numbers allowed in this field");
+				flag=false;
+				register.psno.focus();
+			}
+			else if((register.psno.value.length <6) || (register.psno.value.length >7))
+			{
+				alert("Enter correct  PS no.");
+				flag=false;
+				register.psno.focus();
+		
+			}
+			
+
+else if(register.batchno.selectedIndex==0)
+{
+alert("pls select your Batch No.")
+flag=false;
+}
+
+
+else if(register.djoin.selectedIndex==0||register.mjoin.selectedIndex==0||register.yjoin.selectedIndex==0)
+{
+alert("select date of birth in dd/mm/yyyy");
+flag=false
+}
+
+return flag;
+}
+
+
+	function runClock()
+	{
+		dt =new Date();
+		var dy =new Array("Sun","Mon","Tues","Wednes","Thurs","Fri","Satur");
+		var mn=new Array("Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec");
+		mm=dt.getMonth();
+		yy=dt.getYear();
+		dd=dt.getDate();
+		d=dt.getDay();
+				
+		dispCal = dy[d]+ "day, "+ mn[mm] + " " + dd + ", " + yy + " " + dt.getHours() + " : " + dt.getMinutes() + " : " + dt.getSeconds() ; 
+		dc.innerHTML=dispCal ;
+		setTimeout("runClock();",1000);
+	}
+	delay=850 ;
+	imageNum = 1 ;
+	fish_series = new Array();
+	for(i=1; i < 9 ; i++)
+	{
+		fish_series[i] = new Image();
+		fish_series[i].src = i + ".jpg";
+	}
+	function dance()
+	{
+		document.fish_dance.src = fish_series[imageNum].src;
+		imageNum++;
+		if (imageNum > 8 )
+		{
+			imageNum = 1 ;
+		}
+	}
+
+
+function showmenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="visible"
+}
+function hidemenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="hidden"
+}
+</script>
+</HEAD>
+<BODY onLoad="runClock();">
+<font size=2><SPAN id="dc" style="position:absolute;top:48;left:780;font:normal"></SPAN></FONT>
+
+<IMG src="Runner-02-june.gif"><FONT size="4" face="Arial Black">SET Web Application</FONT>
+<table width="100%" class="sty">
+ <tr bgcolor="green">
+  <td onmouseover="showmenu('tutorials')" onmouseout="hidemenu('tutorials')">
+   <a href="/default.asp"><FONT COLOR=WHITE> Home</FONT></a><br />
+   <table class="menu" id="tutorials" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Home</a></td></tr>
+   <tr><td class="menu"><a href="/xhtml/default.asp">XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/css/default.asp">CSS</a></td></tr>
+   <tr><td class="menu"><a href="/xml/default.asp">XML</a></td></tr>
+   <tr><td class="menu"><a href="/xsl/default.asp">XSL</a></td></tr>
+   </table>
+  </td>
+  <td onmouseover="showmenu('scripting')" onmouseout="hidemenu('scripting')">
+   <a href="Menubar3.asp"><FONT COLOR=WHITE>SET Details</FONT></a><br />
+   <table class="menu" id="scripting" width="120">
+   <tr><td class="menu"><a href="addSETDetails.asp">ADD Individual Details</a></td></tr>
+   <tr><td class="menu"><B><font color=gray>Add Behavioural strengths</font></b></td></tr>
+   <tr><td class="menu"><a href="AchievementHobbieInterest2.asp">Add Achievements</a></td></tr>
+   <tr><td class="menu"><a href="CareerAnchorsDataFeed.asp">Add SET's Anchor points</a></td></tr>
+   <tr><td class="menu"><a href="/ado/default.asp">ADO</a></td></tr>
+   </table>
+  </td>
+  <td>
+   <a href="changePassword.asp"><FONT COLOR=WHITE>Change Password</FONT></a><br />
+  </td>
+  <td onmouseover="showmenu('logout')" onmouseout="hidemenu('logout')">
+   <a href="HomePage.asp"><FONT COLOR=WHITE>Logout</FONT></a><br />
+   <table class="menu" id="logout" width="120">
+   <tr><td class="menu"><a href="MenuBarPage.html">Logoff</a></td></tr>
+   </table>
+  </td>
+
+ </tr>
+</table>
+<br>
+<CENTER>
+	<H2>SET Personal Details</H2>
+	<HR>
+</CENTER>
+<form name="register" method="post" action="register.html" onsubmit=" return validate()">
+<TABLE id="table1" style="WIDTH: 499px; HEIGHT: 135px" cellSpacing=1 cellPadding=1 width=499 
+border=1>
+  
+  <TR>
+    <TD>Name<FONT 
+      color=red>*</TD>
+    <TD><FONT color=red></FONT><input name="lname" ></TD></TR>
+  <TR>
+    <TD>Date of Birth<FONT color=red>*</FONT>  </TD>
+    <TD>dd:<SELECT name="dbd">
+   <OPTION value=1 
+        selected>1</OPTION>
+   <OPTION value=2>2</OPTION>
+   <OPTION value=3>3</OPTION>
+   <OPTION value=4>4</OPTION>
+   <OPTION value=5>5</OPTION>
+   <OPTION value=6>6</OPTION>
+   <OPTION value=7>7</OPTION>
+   <OPTION value=8>8</OPTION>
+   <OPTION value=9>9</OPTION>
+   <OPTION value=10>10</OPTION>
+   <OPTION value=11>11</OPTION>
+   <OPTION value=12>12</OPTION>
+   <OPTION value=13>13</OPTION>
+   <OPTION value=14>14</OPTION>
+   <OPTION value=15>15</OPTION>
+   <OPTION value=16>16</OPTION>
+   <OPTION value=17>17</OPTION>
+   <OPTION value=18>18</OPTION>
+   <OPTION value=19>19</OPTION>
+   <OPTION value=20>20</OPTION>
+   <OPTION value=21>21</OPTION>
+   <OPTION value=22>22</OPTION>
+   <OPTION value=23>23</OPTION>
+   <OPTION value=24>24</OPTION>
+   <OPTION value=25>26</OPTION>
+   <OPTION value=27>27</OPTION>
+   <OPTION value=28>28</OPTION>
+   <OPTION value=29>29</OPTION>
+   <OPTION value=30>30</OPTION>
+   <OPTION value=31>31</OPTION>
+   </SELECT>
+   
+   mm:<SELECT name ="dmd" 
+      select>
+   <OPTION value=1 selected>1</OPTION>
+   <OPTION value=2>2</OPTION>
+   <OPTION value=3>3</OPTION>
+   <OPTION value=4>4</OPTION>
+   <OPTION value=5>5</OPTION>
+   <OPTION value=6>6</OPTION>
+   <OPTION value=7>7</OPTION>
+   <OPTION value=8>8</OPTION>
+   <OPTION value=9>9</OPTION>
+   <OPTION value=10>10</OPTION>
+   <OPTION value=11>11</OPTION>
+   <OPTION value=12>12</OPTION></SELECT>
+   
+   yyyy:<SELECT name="dyd">
+   <OPTION value=1980 selected>1980</OPTION>
+   <OPTION value=1981>1981</OPTION>
+   <OPTION value=1982>1982</OPTION>
+   <OPTION value=1983>1983</OPTION>
+   <OPTION value=1984>1984</OPTION>
+   <OPTION value=1985>1985</OPTION>
+   <OPTION value=1986>1986</OPTION>
+   <OPTION value=1987>1987</OPTION>
+   <OPTION value=1988>1988</OPTION>
+   <OPTION value=1989>1989</OPTION>
+   <OPTION value=1990>1990</OPTION>
+   <OPTION value=1991>1991</OPTION>
+   <OPTION value=1992>1992</OPTION>
+   <OPTION value=1992>1993</OPTION>
+   <OPTION value=1994>1994</OPTION>
+   <OPTION value=1995>1995</OPTION>
+   </SELECT></TD></TR>
+  <TR>
+    <TD>Gender<FONT color=red>*</FONT></TD>
+    <TD>male:<INPUT type=radio name="gender">female:<INPUT 
+    type=radio name="gender"></TD></TR>
+  <TR>
+    <TD>Address<FONT color=red>*</FONT></TD>
+    <TD><TEXTAREA name=address></TEXTAREA></TD></TR>
+  <TR>
+    <TD>Phone. No.<FONT color=red>*</FONT> </TD>
+    <TD><input name="phone" 
+ ></TD></TR></TABLE></P>
+<P>For office use :</P>
+
+<P><!--second table for for official details--->
+<TABLE cellSpacing=1 cellPadding=1 width="50%" border=1>
+  
+  <TR>
+    <TD>Ps .No.<FONT color=red>*</FONT> 
+      </TD>
+    <TD><INPUT name="psno" ></TD></TR>
+  <TR>
+    <TD>Batch No.<FONT color=red>*</FONT> </TD>
+    <TD><SELECT name="batchno">
+    <OPTION value=102 selected>102</OPTION>
+    <OPTION value=103>103</OPTION>
+    <OPTION value=104>104</OPTION>
+    <OPTION value=105>105</OPTION>
+    <OPTION value=106>106</OPTION>
+    <OPTION value=107>107</OPTION>
+    <OPTION value=108>108</OPTION>
+    <OPTION value=109>109</OPTION>
+    </SELECT>
+    </TD></TR>
+    
+    
+  <TR>
+    <TD>Date of Joining<FONT color=red>*</FONT>  </TD>
+    <TD>
+      <P>dd:<SELECT name="djoin">
+   <OPTION value=1 selected>1</OPTION>
+   <OPTION value=2>2</OPTION>
+   <OPTION value=3>3</OPTION>
+   <OPTION value=4>4</OPTION>
+   <OPTION value=5>5</OPTION>
+   <OPTION value=6>6</OPTION>
+   <OPTION value=7>7</OPTION>
+   <OPTION value=8>8</OPTION>
+   <OPTION value=9>9</OPTION>
+   <OPTION value=10>10</OPTION>
+   <OPTION value=11>11</OPTION>
+   <OPTION value=12>12</OPTION>
+   <OPTION value=13>13</OPTION>
+   <OPTION value=14>14</OPTION>
+   <OPTION value=15>15</OPTION>
+   <OPTION value=16>16</OPTION>
+   <OPTION value=17>17</OPTION>
+   <OPTION value=18>18</OPTION>
+   <OPTION value=19>19</OPTION>
+   <OPTION value=20>20</OPTION>
+   <OPTION value=21>21</OPTION>
+   <OPTION value=22>22</OPTION>
+   <OPTION value=23>23</OPTION>
+   <OPTION value=24>24</OPTION>
+   <OPTION value=25>26</OPTION>
+   <OPTION value=27>27</OPTION>
+   <OPTION value=28>28</OPTION>
+   <OPTION value=29>29</OPTION>
+   <OPTION value=30>30</OPTION>
+   <OPTION value=31>31</OPTION></SELECT>
+       
+   mm:<SELECT name="mjoin">
+   <OPTION value=1 selected>1</OPTION>
+   <OPTION value=2>2</OPTION>
+   <OPTION value=3>3</OPTION>
+   <OPTION value=4>4</OPTION>
+   <OPTION value=5>5</OPTION>
+   <OPTION value=6>6</OPTION>
+   <OPTION value=7>7</OPTION>
+   <OPTION value=8>8</OPTION>
+   <OPTION value=9>9</OPTION>
+   <OPTION value=10>10</OPTION>
+   <OPTION value=11>11</OPTION>
+   <OPTION value=12>12</OPTION>
+   </SELECT>
+        
+        
+   yyyy:<SELECT name="yjoin">
+   <OPTION value=2005 selected>2005</OPTION>
+   <OPTION value=2006>2006</OPTION>
+  
+      </SELECT>
+      </P></TD></TR></TABLE></P>
+<P>&nbsp;</P>
+<tr><td><input type="submit" value="submit"></td></tr>
+</form>
+</BODY>
+</HTML>

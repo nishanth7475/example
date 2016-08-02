@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myfirstModule">
+<head>
+	<title></title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="myfirstcontroller">
+	<h1>Hello,{{firstName}} {{lastName}}</h1>
+</div>
+<div ng-controller="mysecondcontroller">
+	<h1>Hello,{{projectID}} {{projectName}} {{client}}</h1>
+</div>
+<div ng-controller="myarraycontroller">
+	<ul>
+		<li ng-repeat="p in particepents">{{p}}</li>
+	</ul>
+</div>
+</hr>
+<div ng-controller="myfirstNGobjectArray">
+<ul>
+<li ng-repeat="s in stockInformation">
+	<h1>Hello</h1>
+<p>{{s.stockID}}</p>
+{{s.stockName}}
+{{s.stockPrice}}
+
+</li>
+</ul>
+</div>
+</body>
+<script type="text/javascript">
+var myNGApp=angular.module("myfirstModule",[]);
+myNGApp.controller('myfirstcontroller',function($scope){
+	$scope.firstName="Nishanth reddy",
+	$scope.lastName="Nareddy",
+	$scope.qualification="MS"
+
+});
+myNGApp.controller('mysecondcontroller',function($scope){
+	$scope.pojectID=13145,
+	$scope.projectName="Banking",
+	$scope.client="citi"
+	});
+myNGApp.controller('myarraycontroller',function($scope){
+	$scope.particepents=['nikhil','Nishanth','kiran']
+
+
+});
+myNGApp.controller('myfirstNGobjectArray',function($scope){
+	$scope.stockInformation=[
+{stockID:101,stockName:'infosys',stockPrice:250},
+{stockID:102,stockName:'infosys',stockPrice:350},
+{stockID:103,stockName:'infosys',stockPrice:450},
+{stockID:104,stockName:'infosys',stockPrice:550},
+{stockID:105,stockName:'infosys',stockPrice:650}]
+	          });
+
+</script>
+</html>

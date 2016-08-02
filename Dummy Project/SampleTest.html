@@ -1,0 +1,210 @@
+<HTML>
+<HEAD>
+<style>
+	body{font-family:arial;}
+	table.sty{font-size:80%;background:black}
+	a{color:black;text-decoration:none;font:normal}
+	a:hover{color:#606060}
+	td.menu{background:lightblue}
+	table.menu
+	{
+		font-size:100%;
+		position:absolute;
+		visibility:hidden;
+		background:black;
+	}
+</style>
+<SCRIPT>
+function result()
+{
+	var resque1=0
+	var resque2=0
+	var resque3=0
+	var resque4=0
+	var resque5=0
+	var resque6=0
+	var resque7=0
+	var resque8=0
+	var resque9=0
+	var resque10=0
+	var finalresult=0
+	
+	if(quiz.que1[2].checked==1)
+	{
+	resque1=resque1+1
+	}
+		
+	if(quiz.que2[1].checked==1)
+	{
+	resque2=resque2+1
+	}
+	if(quiz.que3[3].checked==1)
+	{
+	resque3=resque3+1
+	}
+	if(quiz.que4[1].checked==1)
+	{
+	resque4=resque4+1
+	}
+	if(quiz.que5[2].checked==1)
+	{
+	resque5=resque5+1
+	}
+	if(quiz.que6[1].checked==1)
+	{
+	resque6=resque6+1
+	}
+	if(quiz.que7[2].checked==1)
+	{
+	resque7=resque7+1
+	}
+	if(quiz.que8[1].checked==1)
+	{
+	resque8=resque8+1
+	}
+	if(quiz.que9[0].checked==1)
+	{
+	resque9=resque9+1
+	}
+	if(quiz.que10[0].checked==1)
+	{
+	resque10=resque10+1
+	}
+	finalresult=resque1+resque2+resque3+resque4+resque5+resque6+resque7+resque8+resque9+resque10
+	var ans=confirm("Are you sure you want to submit the test ?");
+	if(ans)
+	{
+		alert("Total Score = " + finalresult);
+	}
+}
+</script>
+<script type="text/javascript">
+	function goTo()
+	{
+		location.href="WelcomePage.html";
+	}
+
+	function runClock()
+	{
+		dt =new Date();
+		var dy =new Array("Sun","Mon","Tues","Wednes","Thurs","Fri","Satur");
+		var mn=new Array("Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec");
+		mm=dt.getMonth();
+		yy=dt.getYear();
+		dd=dt.getDate();
+		d=dt.getDay();
+				
+		dispCal = dy[d]+ "day, "+ mn[mm] + " " + dd + ", " + yy + " " + dt.getHours() + " : " + dt.getMinutes() + " : " + dt.getSeconds() ; 
+		dc.innerHTML=dispCal ;
+		setTimeout("runClock();",1000);
+	}
+
+
+function showmenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="visible"
+}
+function hidemenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="hidden"
+}
+</script>
+</HEAD>
+<BODY onLoad="runClock();">
+<font size=2><SPAN id="dc" style="position:absolute;top:23;left:780;font:normal"></SPAN></FONT>
+<FONT size="4" face="Arial Black">SET Web Application</FONT>
+<table width="100%" class="sty">
+ <tr bgcolor="green">
+  <td onmouseover="showmenu('tutorials')" onmouseout="hidemenu('tutorials')">
+   <a href="/default.asp"><FONT COLOR=WHITE> Home</FONT></a><br />
+   <table class="menu" id="tutorials" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Home</a></td></tr>
+   <tr><td class="menu"><a href="/xhtml/default.asp">XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/css/default.asp">CSS</a></td></tr>
+   <tr><td class="menu"><a href="/xml/default.asp">XML</a></td></tr>
+   <tr><td class="menu"><a href="/xsl/default.asp">XSL</a></td></tr>
+   </table>
+  </td>
+  <td onmouseover="showmenu('scripting')" onmouseout="hidemenu('scripting')">
+   <a href="Menubar3.asp"><FONT COLOR=WHITE>SET Details</FONT></a><br />
+   <table class="menu" id="scripting" width="120">
+   <tr><td class="menu"><a href="addSETDetails.asp">ADD Individual Details</a></td></tr>
+   <tr><td class="menu"><B><font color=gray>Add Behavioural strengths</font></b></td></tr>
+   <tr><td class="menu"><a href="AchievementHobbieInterest2.asp">Add Achievements</a></td></tr>
+   <tr><td class="menu"><a href="CareerAnchorsDataFeed.asp">Add SET's Anchor points</a></td></tr>
+   <tr><td class="menu"><a href="/ado/default.asp">ADO</a></td></tr>
+   </table>
+  </td>
+  <td>
+   <a href="changePassword.asp"><FONT COLOR=WHITE>Change Password</FONT></a><br />
+  </td>
+  <td onmouseover="showmenu('logout')" onmouseout="hidemenu('logout')">
+   <a href="HomePage.asp"><FONT COLOR=WHITE>Logout</FONT></a><br />
+   <table class="menu" id="logout" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Logoff</a></td></tr>
+   <!--tr><td class="menu"><a href="/site/site_validate.asp">Validate XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate CSS</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate XML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate WML</a></td></tr-->
+   </table>
+  </td>
+
+ </tr>
+</table>
+<br>
+
+<form name="quiz">
+<table id="table1">
+<p>1.A JavaScript must reside within the<p>
+<p><INPUT type=radio name="que1" value=0>&lt;object&gt;tag<p>
+<p><INPUT type=radio name="que1" value=0>&lt;applet&gt;tag<p>
+<p><INPUT type=radio name="que1" value=1>&lt;script&gt;tag<p>
+<p><INPUT type=radio name="que1" value=0>&lt;cgi&gt;tag<p></p></p>
+</table>
+
+
+<P>2.write() is a type of</P>
+<P><INPUT type=radio name="que2" value=0>Object</P>
+<P><INPUT type=radio name="que2" value=1>Mehod</P>
+<P><INPUT type=radio name="que2" value=0>Property</P>
+<P><INPUT type=radio name="que2" value=0>Variable</P>
+<P>3.A dot is used to </P>
+<P><INPUT type=radio name="que3" value=0>Identify a JavaScript comment</P>
+<P><INPUT type=radio name="que3" value=0>Separate lines of JavaScript</P>
+<P><INPUT type=radio name="que3" value=0>End of JavaScriptScript</P>
+<P><INPUT type=radio name="que3" value=1>Separate an object name from either a property or a 
+method</P>
+<P>4.True or False This is the first element of the product array</P>
+<P>product[1]</P>
+<P><INPUT type=radio name="que4" value=0>True</P>
+<P><INPUT type=radio name="que4" value=1>False</P>
+<P>5.How many elements are there in the array?</P>
+<P>products=new Array('teen','rose',pizza)</P>
+<P><INPUT type=radio name="que5" value=0>1</P>
+<P><INPUT type=radio name="que5" value=0>2</P>
+<P><INPUT type=radio name="que5" value=1>3</P>
+<P><INPUT type=radio name="que5" value=0>4</P>
+<P>6.Code block is used in a</P>
+<P><INPUT type=radio name="que6" value=0>function call</P>
+<P><INPUT type=radio name="que6" value=1>Function defination</P>
+<P><INPUT type=radio name="que6" value=0>Return value</P>
+<P><INPUT type=radio name="que6" value=0>Argument</P>
+<P>7.The scope of variable means</P>
+<P><INPUT type=radio name="que7" value=0 >The size of variable</P>
+<P><INPUT type=radio name="que7" value=0>The data type of variable</P>
+<P><INPUT type=radio name="que7" value=1>The portion of JavaScript that can access the variable</P>
+<P><INPUT type=radio name="que7" value=0>The variable is used as a return value for a function</P>
+<P>8.True or false. The first chracter of a string array is string[1]</P>
+<P><INPUT type=radio name="que8" value=0>True</P>
+<P><INPUT type=radio name="que8" value=1>False</P>
+<P>9.True or False A checkbox is an element of form</P>
+<P><INPUT type=radio name="que9" value=1>True</P>
+<P><INPUT type=radio name="que9" value=0>False</P>
+<P>10.What is program that processs a form</P>
+<P><INPUT type=radio name="que10" value=1>Common Gateway Interface</P>
+<P><INPUT type=radio name="que10" value=0>Common&nbsp;Program Interface</P>
+
+<P><INPUT type=button value="submit" onclick="result()"></P></FORM>
+
+</BODY>
+</HTML>

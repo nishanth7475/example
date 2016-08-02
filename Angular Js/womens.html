@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+	<title></title>
+	<script src="angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div> -->
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Products</a></li>
+      <li><a href="mens.html">MENS</a></li>
+      <li><a href="womens.html">WOMENS</a></li>
+      <li><a href="kids.html">KIDS</a></li>
+      <li><a href="trending.html">TRENDING</a></li>
+     
+    </ul>
+  </div>
+</nav>
+
+<div class="form-group">
+	<form class="form-inline">
+	<label>Search:</label>
+	<input type="text" ng-model="Search" class="form-control" placeholder="Search">
+		
+	</form>
+</div>
+<div ng-controller="womenscontroller" id="MENS">
+<h3>WOMENS</h3>
+	<table class="table table-striped table-hover table-condensed table-bordered">
+	<tr class="warning">
+	<td>productID</td>
+	<td>productName</td>
+	<td>productDesignation</td>
+	
+</tr>
+		<tr ng-repeat="p in productInfo|uppercase |filter:Search">
+			<td>{{p.productID}}</td>
+			<td>{{p.productName}}</td>
+			<td>{{p.productDesignation}}</td>
+			
+		</tr>
+	</table>
+</div>
+</body>
+<script type="text/javascript">
+	
+	womensApp=angular.module('womensApp',[]);
+	womensApp.controller('womenscontroller',function($scope){
+		$scope.productInfo=[
+		{productID:13145,productName:"Nishanth",productDesignation:"Web Developer"},
+	{productID:13146,productName:"Kiran",productDesignation:"JAVA Developer"},
+	{productID:13147,productName:"Charan",productDesignation:"DATA Developer"},
+
+	{productID:13149,productName:"Harish",productDesignation:"SALES Developer"}
+
+	]
+		
+	});
+	var mainApp=angular.module('mainApp',['womensApp']);
+mainApp.controller('mainAppcontroller',function($scope){
+	$scope.totalProducts=28;
+
+});
+
+
+
+</script>
+</html>

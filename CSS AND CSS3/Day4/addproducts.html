@@ -1,0 +1,72 @@
+
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	input{
+background-color: yellow;
+	}
+	input:focus{
+		background-color: orange;
+		color: white;
+		font-size: 20px;
+	}
+	Button{
+		font-size: 18px;
+	}
+	Button:focus{
+		background-color: gray;
+	}
+	input[type=number]
+	{
+		background-color: blue;
+	}
+
+
+	</style>
+</head>
+<body>
+<h1>Add Products</h1>
+<Button>ADD</Button>
+<Button>EDit</Button>
+<Button>Remove</Button>
+
+<form> 
+<table>
+	<tr>
+		<td>Product Id</td>
+		<td> <input type="text"/> </td>
+		</tr>
+		
+		<tr>
+		<td>Product Name</td>
+		<td> <input type="text"/> </td>
+		</tr>
+		
+		<tr>
+		<td>Product categeory</td>
+		<td> <input type="text"/> </td>
+		</tr>
+		
+		<tr>
+		<td>Product description</td>
+		<td> <input type="text"/> </td>
+		</tr>
+		
+		<tr>
+		<td>Product manufafcutre</td>
+		<td> <input type="text"/> </td>
+		</tr>
+		
+		<tr>
+		<td>Product qty</td>
+		<td> <input type="number" min="1" max="10"/> </td>
+		</tr>
+	
+</table>
+<input type="submit"/>
+</form>
+
+
+</body>
+</html>

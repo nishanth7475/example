@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<h1>List Of Particepents</h1>
+<div ng-init="particepents=['kiran','nishanth','keerthi','anusha','charan']"></div>
+please Enter a Name:<input type="text" ng-model="pName">
+<ul>
+	<li ng-repeat="p in particepents | filter:pName">{{p}}</li>
+</ul>
+
+
+</body>
+</html>

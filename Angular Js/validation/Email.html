@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title></title>
+	
+	
+</head>
+<body>
+<form name="frm"></form>
+<div>
+	Frist Name<input type="text" name="firstName" ng-model="user.firstName" required>
+	<span ng-show="frm.firstName.$dirty&&frm.fisrtName.$error.required">Required!</span>
+	<span ng-show="frm.firstName.$dirty&&frm.fisrtName.$error.text">only text!</span>
+
+
+</div>
+<div>
+	Last Name:<input type="text">
+</div>
+<div>
+	Email:<input type="email" ng-model="user.emial" name="email" required>
+	<span ng-show="frm.email.$dirty&&frm.email.$error.required">Required!</span>
+	<span ng-show="frm.email.$dirty&&frm.email.$error.text">not an email!</span>
+
+
+</div>
+<script src="http://code.angularjs.org/1.2.3/angular.min.js"></script>
+
+</body>
+</html>

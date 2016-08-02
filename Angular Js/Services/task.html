@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON</title>
+</head>
+<body>
+<h1 id="stockInfo"></h1>
+<h1 id="stockInfo2"></h1>
+<ul id="stocklist"></ul>
+
+<script type="text/javascript">
+	var stock='{"name":"Test Task #1","date":"12/01/2012","assigned":"John Doe"}';
+	var data=JSON.parse(stock);
+	document.getElementById("stockInfo").innerHTML="name:"+data.name+"<br/> date :"+data.date;
+</script>
+
+</body>
+</html>

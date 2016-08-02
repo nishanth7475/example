@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-App="mianApp">
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div ng-app="mainApp">
+</br>
+<ul class="nav nav-pills nav-justified">
+<li><a href="#mens">MENS</li>
+<li><a href="#womens">Womens</li>
+<li><a href="#kids">KIDS</li>
+</ul>
+</div>
+<div ng-view style="background-color:red">
+	<script type="ng-template" id="mens.htm">
+	<h2> Hello:{{productInfo}}</h2
+
+	<script>
+	<script type="ng-template" id="womens.htm">
+	<h2> Hello:{{productInfo}}</h2
+
+	<script>
+	
+	<script type="ng-template" id="kids.htm">
+	<h2> Hello:{{productInfo}}</h2
+
+	</script>
+	
+
+</div>
+<script>
+var mainApp=angular.module("mainApp",['ngRoute']);
+mainApp.config(['$routeProvider',
+	function($routeProvider){
+	$routeProvider.
+	when('/mens',{
+		templateUrl:"mens.htm",
+		controller:"menscontroller"
+	}).
+	when('/womens',{
+		templateUrl:"womens.htm",
+		controller:"womenscontroller"
+
+	}).
+	when('/kids',{
+		templateUrl:"kids.htm",
+		controller:"kidscontroller"
+	});
+}]);
+mainApp.controller="menscontroller",function($scope)
+$scope.productInfo=[
+{productID:13145,productName:"Nishanth",productDesignation:"Web Developer"},
+	{productID:13146,productName:"Kiran",productDesignation:"JAVA Developer"},
+	{productID:13147,productName:"Charan",productDesignation:"DATA Developer"},
+	
+	{productID:13149,productName:"Harish",productDesignation:"SALES Developer"}
+
+	]
+		
+	});
+	mainApp.controller="womenscontroller",function($scope)
+	$scope.productInfo=[
+	{productID:13145,productName:"Nishanth",productDesignation:"Web Developer"},
+	{productID:13146,productName:"Kiran",productDesignation:"JAVA Developer"},
+	{productID:13147,productName:"Charan",productDesignation:"DATA Developer"},
+	
+	{productID:13149,productName:"Harish",productDesignation:"SALES Developer"}
+
+	]
+		
+	});
+mainApp.controller="kidscontroller",function($scope)
+$scope.productInfo=[{productID:13145,productName:"Nishanth",productDesignation:"Web Developer"},
+	{productID:13146,productName:"Kiran",productDesignation:"JAVA Developer"},
+	{productID:13147,productName:"Charan",productDesignation:"DATA Developer"},
+	
+	{productID:13149,productName:"Harish",productDesignation:"SALES Developer"}
+
+	]
+		
+	});
+	
+
+</script>
+
+
+</body>
+</html>

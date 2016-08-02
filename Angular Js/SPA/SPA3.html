@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-App="mainApp">
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div>
+</br>
+<ul class="nav nav-pills nav-justified">
+<li><a href="#mens">MENS</li>
+<li><a href="#womens">Womens</li>
+<li><a href="#kids">KIDS</li>
+</ul>
+</div>
+<div ng-view style="background-color:red">
+	<script type="ng-template" id="mens.htm">
+	<h2> Hello:{{productInfo}}</h2
+
+	</script>
+	
+
+</div>
+<script>
+var mainApp=angular.module("mainApp",['ngRoute']);
+mainApp.config(['$routeProvider',
+	function($routeProvider){
+	$routeProvider.
+	when('/mens',{
+		templateUrl:"mens.htm",
+		controller:"menscontroller"
+	});
+	}]);
+mainApp.controller('mensController',function($scope){
+  $scope.productInfo = [
+  {empId : 101, empName : 'Nikhil', empDesignation:'Consultant', empSalary:2000,empCity:'Mumbai'},
+  {empId : 102, empName : 'Rohhan', empDesignation:'Sales', empSalary:2000,empCity:'Mumbai'},
+  {empId : 103, empName : 'Akshay', empDesignation:'Development', empSalary:2000,empCity:'Mumbai'},
+  {empId : 104, empName : 'Nishant', empDesignation:'Consultant', empSalary:2000,empCity:'Mumbai'},
+  {empId : 105, empName : 'Harish', empDesignation:'Sales', empSalary:8000,empCity:'Mumbai'},
+  {empId : 106, empName : 'Kiran', empDesignation:'Development', empSalary:2000,empCity:'Mumbai'},
+  {empId : 107, empName : 'Anusha', empDesignation:'Consultant', empSalary:2000,empCity:'Mumbai'},
+  {empId : 108, empName : 'Ampili', empDesignation:'Sales', empSalary:12000,empCity:'Mumbai'},
+  {empId : 109, empName : 'Charan', empDesignation:'Consultant', empSalary:2000,empCity:'Mumbai'}
+  ]
+});
+  
+	
+
+</script>
+
+
+</body>
+</html>

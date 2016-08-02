@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="mynewModule">
+<head>
+	<title></title>
+	<script src="angular.min.js"></script>
+ <!-- <script type="text/javascript" src="jquery-2.1.4.js"></script>
+
+	// <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div ng-controller="empdetailscontroller">
+	{{empID}} {{empName}}
+</div>
+<div ng-controller="myNGempdetailscontrollerArray" class="table-responsive">
+Order By :<select ng-model="sortColumn">
+    <option value="empID">empID DESC</option>
+	<option value="empName">empName ASC</option>
+	<option value="empDesignation">empDesignation ASC</option>
+	<option value="Salary">Salary DESC</option>
+	<option value="city">city ASC</option>
+
+</select>
+
+<table class="table table-striped table-hover table-condensed table-bordered " >
+<tr class="warning">
+	<td>empID</td>
+	<td>empName</td>
+	<td>empDesignation</td>
+	<td>empSalary</td>
+	<td>empcity</td>
+</tr>
+</br>
+  <tr ng-repeat="e in empdetails | orderBy:sortColumn">
+    <td>{{ e.empID }}</td>
+    <td>{{ e.empName }} </td>
+    <td>{{ e.empDesignation}}</td>
+    <td>{{ e.salary}}</td>
+    <td>{{ e.city }}</td>
+
+  </tr>
+</table>
+
+
+	
+</div>
+</body>
+<script type="text/javascript">
+var myNGApp=angular.module("mynewModule",[])
+myNGApp.controller("empdetailscontroller",function($scope){
+	$scope.empID=13145,
+	$scope.empName="Nishanth",
+	$scope.Designation="Web Developer",
+	$scope.salary=5000,
+	$scope.city="NJ"
+});
+myNGApp.controller("myNGempdetailscontrollerArray",function($scope){
+	$scope.empdetails=[
+	{empID:13145,empName:"Nishanth",empDesignation:"Web Developer",salary:5000,city:"New Jersy"},
+	{empID:13146,empName:"Kiran",empDesignation:"JAVA Developer",salary:6000,city:"Virginia"},
+	{empID:13147,empName:"Charan",empDesignation:"DATA Developer",salary:7000,city:"New York"},
+	{empID:13148,empName:"Anusha",empDesignation:"DOTNET Developer",salary:8000,city:"Texas"},
+	{empID:13149,empName:"Harish",empDesignation:"SALES Developer",salary:9000,city:"California"}
+
+	];
+
+	$scope.sortColumn="empdetails";
+});
+
+
+
+</script>
+</html>

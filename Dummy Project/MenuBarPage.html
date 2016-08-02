@@ -1,0 +1,194 @@
+<HTML>
+<HEAD>
+<style>
+	a.one:link {color: #000000; text-decoration: none}
+	a.one:visited {color: #000000; text-decoration: none}
+	a.one:hover {text-decoration: underline;font-size: 150%}
+
+	body{font-family:arial;}
+	table.sty{font-size:80%;background:black}
+	a{color:black;text-decoration:none;font:normal}
+	a:hover{color:#606060}
+	td.menu{background:lightblue}
+	table.menu
+	{
+		font-size:100%;
+		position:absolute;
+		visibility:hidden;
+		background:black;
+	}
+</style>
+<script language="JavaScript" type="text/javascript" src="cookies.js"></script>
+<script language="JavaScript" type="text/javascript">
+function saveData( ) 
+{
+    var data = document.loginForm.tLogin.value;
+    var expDate = getExpDate(180,0,0);
+    setCookie("userName",data, expDate); 
+
+}
+</script>
+
+<script type="text/javascript">
+	function runMouse()
+	{
+		var x,y;
+		x=window.event.screenX;
+		y=window.event.screenY;
+		setTimeout("mmove1(" + x + "," + y + ")",50);
+		window.status="X-" + x + ",Y-" + y;
+	}
+	function mmove1(x,y)
+	{
+		t1.style.posLeft=x+5;
+		t1.style.posTop=y-95;
+	}
+
+	function goTo()
+	{
+		location.href="WelcomePage.html";
+	}
+
+	function runClock()
+	{
+		dt =new Date();
+		var dy =new Array("Sun","Mon","Tues","Wednes","Thurs","Fri","Satur");
+		var mn=new Array("Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec");
+		mm=dt.getMonth();
+		yy=dt.getYear();
+		dd=dt.getDate();
+		d=dt.getDay();
+				
+		dispCal = dy[d]+ "day, "+ mn[mm] + " " + dd + ", " + yy + " " + dt.getHours() + " : " + dt.getMinutes() + " : " + dt.getSeconds() ; 
+		dc.innerHTML=dispCal ;
+		setTimeout("runClock();",1000);
+	}
+	delay=850 ;
+	imageNum = 1 ;
+	fish_series = new Array();
+	for(i=1; i < 9 ; i++)
+	{
+		fish_series[i] = new Image();
+		fish_series[i].src = i + ".jpg";
+	}
+	function dance()
+	{
+		document.fish_dance.src = fish_series[imageNum].src;
+		imageNum++;
+		if (imageNum > 8 )
+		{
+			imageNum = 1 ;
+		}
+	}
+
+
+function showmenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="visible"
+}
+function hidemenu(elmnt)
+{
+	document.getElementById(elmnt).style.visibility="hidden"
+}
+</script>
+</HEAD>
+<BODY onLoad="runClock();"  onunload="saveData()" onMouseMove="runMouse();">
+<font size=2><SPAN id="dc" style="position:absolute;top:48;left:780;font:normal"></SPAN></FONT>
+<IMG src="Runner-02-june.gif"><FONT size="4" face="Arial Black">SET Web Application</FONT>
+<table width="100%" class="sty">
+ <tr bgcolor="green">
+  <td onmouseover="showmenu('tutorials')" onmouseout="hidemenu('tutorials')">
+   <a href="/default.asp"><FONT COLOR=WHITE> Home</FONT></a><br />
+   <table class="menu" id="tutorials" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Home</a></td></tr>
+   <tr><td class="menu"><a href="/xhtml/default.asp">XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/css/default.asp">CSS</a></td></tr>
+   <tr><td class="menu"><a href="/xml/default.asp">XML</a></td></tr>
+   <tr><td class="menu"><a href="/xsl/default.asp">XSL</a></td></tr>
+   </table>
+  </td>
+  <td onmouseover="showmenu('scripting')" onmouseout="hidemenu('scripting')">
+   <a href="Menubar3.asp"><FONT COLOR=WHITE>SET Details</FONT></a><br />
+   <table class="menu" id="scripting" width="120">
+   <tr><td class="menu"><a href="addSETDetails.asp">ADD Individual Details</a></td></tr>
+   <tr><td class="menu"><B><font color=gray>Add Behavioural strengths</font></b></td></tr>
+   <tr><td class="menu"><a href="AchievementHobbieInterest2.asp">Add Achievements</a></td></tr>
+   <tr><td class="menu"><a href="CareerAnchorsDataFeed.asp">Add SET's Anchor points</a></td></tr>
+   <tr><td class="menu"><a href="/ado/default.asp">ADO</a></td></tr>
+   </table>
+  </td>
+  <td>
+   <a href="changePassword.asp"><FONT COLOR=WHITE>Change Password</FONT></a><br />
+  </td>
+  <td onmouseover="showmenu('logout')" onmouseout="hidemenu('logout')">
+   <a href="HomePage.asp"><FONT COLOR=WHITE>Logout</FONT></a><br />
+   <table class="menu" id="logout" width="120">
+   <tr><td class="menu"><a href="HomePage.asp">Logoff</a></td></tr>
+   <!--tr><td class="menu"><a href="/site/site_validate.asp">Validate XHTML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate CSS</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate XML</a></td></tr>
+   <tr><td class="menu"><a href="/site/site_validate.asp">Validate WML</a></td></tr-->
+   </table>
+  </td>
+
+ </tr>
+</table>
+<BR>
+<TABLE border=1 width="100%" cellspacing=0>
+	<TR>
+		<TD width="25%"><MARQUEE direction="up" height="300">SET Induction phase is very IMP phase in L&T Infotech Ltd.<BR>We are having This SET Induction devided into 3 modules.</MARQUEE></TD>
+		<TD width="50%" align=center><IMG src="1.jpg" name=fish_dance onLoad="setTimeout('dance()',delay)" width="400" height="300"></TD>
+		<TD width="25%">
+		<FORM name="loginForm">
+		<TABLE border=3 align="center" cellspacing=0>
+			<TR bgcolor="green">
+				<TH colspan=2>Login Screen</TH>
+			</TR>
+			<TR align=left>
+				<TH>Login ID</TH>
+				<TH><INPUT type=text name="tLogin"></TH>
+			</TR>
+			<TR align=left>
+				<TH>Password</TH>
+				<TH><INPUT type=password name="tPassword"></TH>
+			</TR>
+			<TR align=left>
+				<TH><INPUT type="button" value="Login" onClick="goTo();"></TH>
+				<TH><INPUT type="reset" value="Reset"></TH>
+			</TR>
+			</FORM>
+			<TR align=right>
+				<TH colspan=2>First time user? <A href="SignUp.html">Click                                        here</A></TH>
+			</TR>
+		</TABLE><BR>You must be an authorised user to access further links. If you are using this application first time then click on above link to Register.
+		</TD>
+	</TR>
+	<TR height="30%">
+		<TD width="25%"><B>| <FONT color="Green">Gyanpeeth</FONT></B><BR><BR><FONT size=2>In todays world we belive in self-Learning. To give better idea about latest technologies, for SET's we have online courses on various technologies.</Font><BR><BR><a href="http://gyanpeeth.lntinfotech.com/Application">Click to proceed </TD>
+		<TD width="50%"><B>| <FONT color="Green">About SET Induction Program</B></font><BR><BR>
+			<A href="" class="one">Objectives</A><BR>
+			<A href="" class="one">Course Material</A><BR>
+			<A href="SampleTest.html" class="one">Sample tests<BR></A>
+			<A href="" class="one">Schedule<BR></A>
+			<A href="" class="one">Certifications<BR></A>
+		</TD>
+		<TD width="25%"><B>| <Font color="Green">B'Days of the month<br>
+			<TABLE border=1 width="200">
+				<TR onMouseOver="this.bgColor='Green'" onMouseOut="this.bgColor='White'"><TD>Whish to</TD><TD>Date</TD></TR>
+				<TR><TD>K. Manas</TD><TD>1<SUP>st</SUP> Nov.</TD></TR>
+				<TR><TD>Salva M.</TD><TD>8<SUP>th</SUP> Nov.</TD></TR>
+				<TR><TD>Reema S.</TD><TD>23<SUP>rd</SUP> Nov</TD></TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD colspan=3></TD>
+	</TR>
+	<TR bgcolor=Green>
+		<TD colspan=2><FONT color="white">Copyright &copy; L&T Infotech Ltd.</TD>
+		<TD align=right><A href="http://www.lntinfotech.com"><FONT color="white">L&T Home</A> | <A href="mailto:tr@lntinfotech.com"><FONT color="white">Contact Us</A></TD>
+	</TR>
+</TABLE>
+<DIV id="t1" style="position:absolute;left:100;top:100"><IMG src="Door-01-june.gif"></DIV>
+</BODY>
+</HTML>
